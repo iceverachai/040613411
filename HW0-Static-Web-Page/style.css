@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@200;300&display=swap');
+
+.container{
+    max-width: 850px;
+    margin: 0 auto;
+    
+}
+
+h1{
+    font-size: 2em;
+    text-align: center;  
+    padding-top: 30px;
+    font-family: 'Prompt', sans-serif;
+    font-weight: bold;
+}
+ 
+.intro{
+    margin-top: 30px;
+    font-family: 'Prompt', sans-serif;
+    color: black;
+    font-weight: 400;
+}
+
+.container1{
+    color: black;
+    font-family: 'Prompt', sans-serif;
+    margin-top: 60px;
+}
+
+.imageplant{
+    /* background-color: red; */
+    width: 50%;
+    margin: 30px auto 30px auto;
+}
+
+.imageplant img{
+    width: 100%;
+    aspect-ratio: 3/2;
+}
+
+.titlename{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.item{
+    display: flex;
+    margin-top: 5px;
+}
+
+.datatitle{
+    width: 18%;
+    /* background-color: red; */
+    font-weight: bolder;
+    font-size: 17px;
+}
+
+.dataname{
+    /* background-color: blue; */
+    font-size: 17px;
+}
+
+.infotitle{
+    margin-top: 40px;
+    font-size: 19px;
+    font-weight: bolder;
+}
+
+.infodata{
+    margin-top: 10px;
+}
+
+.tabspace{
+    margin-left: 40px;
+}
+
+.propertiestitle{
+    margin-top: 40px;
+    font-size: 19px;
+    font-weight: bolder;
+}
+
+.propertiesdata{
+    margin-top: 10px;
+}
+
+.footer{
+    margin-top: 100px;
+    margin-bottom: 50px;
+    font-family: 'Prompt', sans-serif;
+    /* background-color: red; */
+}
+
+.footer1{
+    margin-top: 80px;
+    margin-bottom: 50px;
+    font-family: 'Prompt', sans-serif;
+    /* background-color: red; */
+}
+
+.titlefooter{
+    font-size: 25px;
+}
+
+.datafooter{
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+@media screen and (max-width:850px){
+    .datatitle{
+        font-size: 12px;
+    }
+    
+    .dataname{
+        font-size: 12px;
+    }
+    
+}
+
+@media screen and (max-width:500px){
+    .datatitle{
+        font-size: 10px;
+    }
+    
+    .dataname{
+        font-size: 10px;
+    }
+    
+}
+
+@media screen and (max-width:400px){
+    .datatitle{
+        font-size: 8px;
+    }
+    
+    .dataname{
+        font-size: 8px;
+    }
+    
+}
