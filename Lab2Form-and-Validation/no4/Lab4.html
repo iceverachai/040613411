@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .textinput {
+        margin-top: 15px;
+        margin-left: 10px;
+    }
+</style>
+
+<body>
+    <form action="form-echo.php">
+        <div class="textinput">
+            USERNAME :
+            <input type="text" name="username" placeholder="Username" pattern="[\w]{1,}">
+        </div>
+        <div class="textinput">
+            <label>สาขาวิชา:</label>
+            <select name="dept">
+                <option value="">--Please choose an option--</option>
+                <option value="CS">CS</option>
+                <option value="IC">IC</option>
+                <option value="MA">MA</option>
+                <option value="IMI">IMI</option>
+                <option value="AS">AS</option>
+                <option value="AFET">AFET</option>
+            </select>
+        </div>
+        <div class="textinput">
+            ชื่อ (ภาษาอังกฤษ) :
+            <input type="text" name="name" placeholder="Name" pattern="[A-Z]+">
+        </div>
+        <div class="textinput">
+            รหัสนักศึกษา :
+            <input type="text" name="studentid" placeholder="รหัสนักศึกษา" pattern="\d{2}-\d{6}-\d{4}-\d{1}">
+        </div>
+        <div class="textinput">
+            บ้านเลขที่ :
+            <input type="text" name="address" placeholder="Name" pattern="[0-9\/]+">
+        </div>
+        <div class="textinput">
+            รหัสสินค้า :
+            <input type="text" name="itemcode" placeholder="Name" pattern="[A-Z]{3}[0-9]{2}">
+        </div>
+        <div class="textinput">
+            ชื่อ (ภาษาไทย) :
+            <input type="text" name="namethai" placeholder="Name" pattern="[ก-๏]+">
+        </div>
+        <div style="margin-top: 15px;margin-left: 9px;">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</body>
+
+</html>
