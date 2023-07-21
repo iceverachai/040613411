@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .placeholdercolor::-webkit-input-placeholder{
+            color: #00C807;
+        }
+        .placeholdercolor:valid{
+            color: green;
+        }
+        .placeholdercolor:invalid{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <h1>Form pattern attibutes testing</h1>
+    <hr/>
+    Slide 33 Example: 
+    <input class="placeholdercolor" type="text">
+    <form action="form-echo.php">
+    <div>
+        <h3>1. เป็นสระในภาษาอังกฤษเท่านั้นและมีได้ 3 ตัว</h3>
+        <div>
+            <input name="a" class="placeholdercolor" type="text" placeholder="3 english only" pattern="[aeiouAEIOU]{3}">
+        </div>
+    </div>
+
+    <div>
+        <h3>2. ขึ้นต้นด้วยตัวพิมพ์ใหญ่ ที่เหลือเป็นอักษรพิมพ์เล็กตั้งแต่ 1 ตัวขึ้นไป</h3>
+        <div>
+            <input name="b" class="placeholdercolor" type="text" placeholder="Xx..." pattern="^([A-Z]{1})[a-z]+">
+        </div>
+    </div>
+
+    <div>
+        <h3>3. ขึ้นต้นคำด้วย ord หรือ order ลงท้ายด้วยตัวเลข 5 ตัว</h3>
+        <div>
+            <input name="c" class="placeholdercolor" type="text" placeholder="ord/ordernnnnn" pattern="^(ord|order)\d{5}$">
+        </div>
+    </div>
+
+    <div>
+        <h3>4. เป็นคำว่า frog หรือ blog หรือ clog เท่านั้น</h3>
+        <div>
+            <input name="d" class="placeholdercolor" type="text" placeholder="frog/blog/clog" pattern="(frog|blog|clog)">
+        </div>
+    </div>
+
+    <div>
+        <h3>BONUS. เป็นรหัสนักศึกษา cs เท่านั้น</h3>
+        <div>
+            <input name="e" class="placeholdercolor" type="text" placeholder="xx-xxxxxx-xxxx-x" pattern="^\d{2}-(040626-)(.*\d{4}(-))\d{1}">
+        </div>
+    </div>
+
+    <div style="margin-top: 20px;">
+        <button type="submit" style="color: #00C807;">Submit</button> 
+    </div>
+
+    </form>
+</body>
+</html>
