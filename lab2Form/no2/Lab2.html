@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <fieldset>
+        <form action="form-echo.php">
+            <h2>แบบฟอร์มจองทัวร์</h2>
+
+            <div>
+                <fieldset>
+                    <legend>ข้อมูลทั่วไป</legend>
+                    ชื่อ-สกุล :
+                    <div>
+                        <input type="text" name="name" pattern="[\wก-๏\s]{2,}" placeholder="กรอกชื่อ-สกุล" required> *
+                    </div>
+
+                    Email :
+                    <div>
+                        <input type="email" name="email" pattern="[\wก-๏.@_-]{2,}" required> *
+                    </div>
+
+                    โทรศัพท์ :
+                    <div>
+                        <input type="tel" value="+66" name="phonenumber" pattern="^(\+66)\d{9}" required> *
+                    </div>
+
+                    ที่อยู่ :
+                    <div>
+                        <textarea name="address"></textarea>
+                    </div>
+
+                    <div>
+                        รหัสไปรษณีย์ :
+                        <input type="text" style="width:60px;" name="postalcode" pattern="\d+" maxlength="5" >
+                    </div>
+
+                    <div>
+                        รูปผู้จอง :
+                        <input type="file" name="picture">
+                    </div>
+                </fieldset>
+            </div>
+
+            <div style="margin-top: 20px;">
+                <fieldset>
+                    <legend>ข้อมูลเข้าสู่ระบบ</legend>
+                    Username :
+                    <div style="margin-bottom: 15px;">
+                        <input type="text" name="username" pattern="[\w\d]+" minlength="8">
+                        <div><i>ประกอบด้วยตัวเลข ตัวอักษร หรือ _ ตั้งแต่ 8 ตัวขึ้นไป</i></div>
+                    </div>
+
+                    Password :
+                    <div>
+                        <input type="password" name="password" minlength="8">
+                        <div><i>ประกอบด้วยตัวอักษรอะไรก็ได้ 8 ตัวขึ้นไป</i></div>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div style="margin-top: 20px;">
+                <fieldset>
+                    <legend>ข้อมูลทัวร์ที่ต้องการ</legend>
+                    แพคเก็จทัวร์ :
+                    <select name="Country">
+                        <option value="">--select--</option>
+                        <option value="Thailand">Thailand</option>
+                        <option value="USA">USA</option>
+                        <option value="England">England</option>
+                        <option value="Netherland">Netherland</option>
+                        <option value="France">France</option>
+                    </select>
+
+                    <div>
+                        วันที่เดินทาง :
+                        <input type="date" name="date">
+                    </div>
+
+                    <div>
+                        จำนวนผู้เดินทาง
+                        <input type="number" name="travelers" min="1" max="10" style="width:60px;">
+                    </div>
+
+                    <div>
+                        เน้นการท่องเที่ยวแบบใด ?
+                        <div><input type="checkbox" name="where" value="shoping"> ชอปปิ้ง</div>
+                        <div><input type="checkbox" name="where" value="forest"> ธรรมชาติ</div>
+                        <div><input type="checkbox" name="where" value="sea"> ทะเล</div>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div style="margin-top: 20px;">
+                ยอมรับเงื่อนไขและข้อตกลง
+                <input type="radio" name="confirm" value="I agree" checked="checkbox">I agree
+                <input type="radio" name="confirm" value="I disagree">I disagree
+                <span style="margin-left: 10px;"><button>จอง</button></span>
+            </div>
+        </form>
+    </fieldset>
+
+</body>
+
+</html>

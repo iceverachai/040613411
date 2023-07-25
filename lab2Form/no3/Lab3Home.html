@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Form Exercise</title>
+</head>
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+    <form action="Lab3Login.html">
+        <h1>เข้าสู่ระบบ</h1>
+
+        <table>
+            <tr>
+                <th>Username:</th>
+                <td><input type="text" minlength="1" autofocus required></td>
+            </tr>
+            <tr>
+                <th>Password:</th>
+                <td><input type="password" minlength="1" required></td>
+            </tr>
+            <tr>
+                <td colspan="2">กรุณาพิมพ์ตามตัวเลขที่ปรากฏ:
+                    <div>1559</div>
+                    <div><input type="text" pattern="(1559)" required></div>
+                </td>
+            </tr>
+        </table>
+
+        <button style="margin-top: 20PX;">
+            <img style="width: 70px;"
+                src="https://cdn.discordapp.com/attachments/1006202573696552982/1131970879761432636/login.jpg">
+        </button>
+    </form>
+</body>
+
+</html>
