@@ -1,0 +1,35 @@
+footer {
+    text-align: center;
+    margin-top: 50px;
+}
+footer a {
+    display: inline;
+    margin-right: 10px;
+    width: 50px;
+    padding: 1px;
+    font-size: 9px;
+    font-family: Verdana, Geneva, sans-serif;
+    text-decoration: none;
+    text-align: center;
+    color: #007;
+    background-color: #DDD;
+    border: 1px solid black;
+    vertical-align: middle;
+    white-space: nowrap;
+    cursor: pointer;
+}
+footer a strong {
+    font-weight: bold;
+    color: #FFF;
+    background-color: #007;
+    padding-left: 2px;
+    margin-right: 5px;
+}
+footer a:hover {
+    color: #FFF;
+    background-color: #007;
+}
+footer a:hover strong {
+    color: #007;
+    background-color: #DDD;
+}  

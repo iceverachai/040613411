@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Common CSS Properties</title>
+  <meta charset="utf-8">
+  <style>
+    body {
+      margin: 60px;
+    }
+
+    h1 {
+      color: #007;
+      background-color: #FFF;
+      text-align: center;
+      font-style: italic;
+    }
+
+    h2 {
+      margin-left: -20px;
+      color: #049;
+    }
+
+    p {
+      text-align: justify;
+      font-size: large;
+    }
+
+    table {
+      margin-left: auto;
+      margin-right: auto;
+      border-collapse: collapse;
+      font-size: large;
+      line-height: 24px;
+      font-family: Verdana, Arial, Helvetica, sans-serif;
+    }
+
+    th {
+      border-top: 1px solid #777;
+      border-bottom: 1px solid #777;
+      background-color: #AFEEEE;
+      color: #007;
+      text-align: left;
+    }
+
+    td {
+      border-bottom: 1px solid #BBB;
+      background-color: #EEE;
+      color: #000;
+    }
+
+    td,
+    th {
+      padding: 0.2em 0.5em 0.2em 0.5em;
+    }
+
+    td+td,
+    th+th {
+      border-left: 1px solid #BBB;
+    }
+
+    a:link,
+    a:visited {
+      color: #007;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+  </style>
+   
+  <link rel="stylesheet" href="footer.css">
+</head>
+
+<body> 
+  <h1>Common CSS Properties</h1>
+  <h2>Background</h2>
+  <p>
+    Cascading Style Sheets describe the appearance of structured documents, usually
+    written in <a href="http://en.wikipedia.org/wiki/HTML">HTML</a>. The current
+    standard for CSS is level 2 revision 1 (CSS 2.1) which is officially documented
+    by the <a href="http://www.w3.org">W3C</a> in the
+    <a href="http://www.w3.org/TR/CSS2">Cascading Style Sheets Level 2 Revision 1
+      (CSS 2.1) Specification</a>. CSS 3 is the new emerging standard. A good
+    web site to follow what is going on with CSS 3 is
+    <a href="http://www.css3.info">www.css3.info</a>.
+  </p>
+
+  <table>
+    <tr>
+      <th>Property</th>
+      <th>Values</th>
+      <th>Used with Elements</th>
+    </tr>
+    <tr>
+      <td>color</td>
+      <td>#RRGGBB (Red, Green, Blue hex values)</td>
+      <td>any element that contains text</td>
+    </tr>
+    <tr>
+      <td>text-align</td>
+      <td>left | right | center | justify</td>
+      <td>block elements h1..h6, p, li, etc.</td>
+    </tr>
+    <tr>
+      <td>text-decoration</td>
+      <td>none | underline | overline | line-through | blink | inherit</td>
+      <td>mostly with a (anchor) elements</td>
+    </tr>
+    <tr>
+      <td>text-transformation</td>
+      <td>none | capitalize | uppercase | lowercase</td>
+      <td>any element that contains text</td>
+    </tr>
+    <tr>
+      <td>line-height</td>
+      <td>% or px</td>
+      <td>block elements h1..h6, p, li, etc.</td>
+    </tr>
+    <tr>
+      <td>letter-spacing</td>
+      <td>normal or px value</td>
+      <td>any element that contains text</td>
+    </tr>
+    <tr>
+      <td>font-family</td>
+      <td>font or font-family [, font or font-family ...]</td>
+      <td>any element that contains text</td>
+    </tr>
+    <tr>
+      <td>font-size</td>
+      <td>px or em value</td>
+      <td>any element that contains text</td>
+    </tr>
+    <tr>
+      <td>font-style</td>
+      <td>normal | italic | oblique</td>
+      <td>any element that contains text</td>
+    </tr>
+    <tr>
+      <td>font-weight</td>
+      <td>normal | bold</td>
+      <td>any element that contains text</td>
+    </tr>
+    <tr>
+      <td>background-color</td>
+      <td>#RRGGBB (Red, Green, Blue hex values)</td>
+      <td>any element with a background</td>
+    </tr>
+    <tr>
+      <td>background-image</td>
+      <td>url("[image url]")</td>
+      <td>mostly with body</td>
+    </tr>
+    <tr>
+      <td>background-repeat</td>
+      <td>repeat | repeat-x | repeat-y | no-repeat</td>
+      <td>mostly with body</td>
+    </tr>
+    <tr>
+      <td>background-position</td>
+      <td>left | center | right | top | center | bottom</td>
+      <td>mostly with body</td>
+    </tr>
+    <tr>
+      <td>list-style-type</td>
+      <td>disc | square | circle</td>
+      <td>ul</td>
+    </tr>
+    <tr>
+      <td>list-style-type</td>
+      <td>decimal | lower-roman | upper-roman | lower-alpha | upper-alpha</td>
+      <td>ol</td>
+    </tr>
+  </table>
+
+  <footer>
+    <hr>
+    <a href="http://validator.w3.org/check/referer">
+      <strong> HTML </strong> It Validates! </a> &nbsp;
+    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+      <strong> CSS </strong> It Validates! </a>
+  </footer>
+
+</body>
+
+</html>
