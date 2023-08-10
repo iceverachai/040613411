@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Box Size</title>
+<style>
+body {
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    text-align: center;
+}
+
+hr {
+    margin-left: 0;
+    background-color: #000;
+    height: 8px;
+}
+p {
+    text-align: center;
+}
+footer {
+    text-align: center;
+    margin-top: 60px;
+    font-size: .9em;
+}
+footer a {
+    border: 1px solid #777;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 2px;
+    margin-right: 10px;
+    background-color: #FFF;
+}
+footer a, footer a:visited {
+    text-decoration: none;
+    color: #00A;
+}
+footer a > strong {
+    background-color: #55C;
+    color: #FFF;
+    padding: 2px;
+    padding-left: 4px;
+    margin-right: 2px;
+}
+div#box1,div#box2{
+    width: 500px;
+    height: 200px;
+    background-color: #F70;
+}
+div#box2{
+    margin: 50px;
+    padding: 50px;
+    border: 10px solid #000;
+}
+.line1{
+    width: 500px;
+}
+.line2{
+    width: 720px;
+}
+</style>
+</head>
+<body>
+<h1>Box Size</h1>
+
+    <div id="box1">
+        Box 1
+    </div>
+    <hr class="line1">
+    <p class="line1">500 pixels</p>
+
+    <div id="box2">
+        Box 2  
+    </div>
+    <hr class="line2">
+    <p class="line2"> 720 pixels</p>
+
+    <footer>
+        <a href="http://validator.w3.org/check/referer">
+        <strong> HTML </strong> Valid! </a>
+        <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3">
+        <strong> CSS </strong> Valid! </a>
+    </footer>
+
+</body>
+</html>

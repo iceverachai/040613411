@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .flexible{
+            display: flex;
+        }
+        .content{
+            flex:1;
+            background-color: #dcdcdc;
+            padding: 20px;
+        }
+        .botton{
+            background-color: #08048c;
+            color: white;
+            width: fit-content; /*พอดีกับตัวอักษรที่มี*/
+            padding: 10px 30px;
+            border-radius: 0.4rem;
+            /*margin: 0 auto;*/
+        }
+        a{
+            text-decoration: none;
+        }
+        .botton::before{
+            font-family: FontAwesome;
+            content: "\f217";
+        }
+        .wrap{
+           display: flex;
+           justify-content: center;
+        }
+        @media screen and (max-width:768px){
+            .flexible{
+                display: block;
+            }
+            .product{
+                justify-content: center;
+                display: flex;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flexible">
+        
+		<div class="product">
+            <img src="imgs/clock.jpg">
+        </div>
+
+        <div class="content">
+            Garmin Instinct, Rugged Outdoor Watch with GPS, 
+            Features GLONASS and Galileo, Heart Rate Monitoring and
+            3-axis Compass, Tundra<br><br>
+            <div class="wrap">
+                <a href="">
+                    <div class="botton">Add to cart</div>
+                </a>
+            </div>
+		</div>
+
+    </div>
+
+</body>
+</html>
