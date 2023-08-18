@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <script>
+        var size = 14; // ประกาศตัวแปรไว้ใช้ร่วมกัน ใช้เก็บขนาดที่เพิ่มหรือลด
+        function decrease() {
+            var text = document.getElementById("p1");
+            text.style.fontSize = --size;
+        }
+        function increase() {
+            var text = document.getElementById("p1");
+            text.style.fontSize = ++size;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>
+        <span onclick="decrease()">-</span> |
+        <span onclick="increase()">+</span>
+    </h1>
+    <p id="p1">
+        If you're leavin', will you take me with you? I'm
+        tired of talkin' on my phone There is one thing I can
+        never give you My heart will never be your home
+    </p>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function countTheWord(str){
+            alert(str.split(" ").filter(e => e.toLowerCase() === "the").length)
+
+        }
+    </script>
+</head>
+<body>
+    The eighth ruler of the Fifth Dynasty in the late 25th century.<br><br>
+    <a href="#" onclick="countTheWord('The eighth ruler of the Fifth Dynasty in the late 25th century')">Click for count 'the'</a>
+</body>
+</html>

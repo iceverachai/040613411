@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function changecolor(id){
+        const changez = document.getElementById(id);
+        if(changez.value){
+            changez.style.color = "green";
+        }else{
+            changez.style.color = "";
+        }
+    }
+
+    // function changecolor(e){ //ใช้กับ this
+    //     const changez = document.getElementById(id);
+    //     if(e.value){
+    //         e.style.color = "green";
+    //     }else{
+    //         e.style.color = "";
+    //     }
+    // }
+</script>
+<body>
+    Name: <input type="text" id="n" onblur="changecolor('n')"><br> 
+    Age: <input type="text" id="a" onblur="changecolor('a')"><br>
+    Birthdate: <input type="text" id="bd" onblur="changecolor('bd')"><br>
+</body>
+</html>
