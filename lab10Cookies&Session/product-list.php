@@ -2,7 +2,7 @@
 	include "connect.php";
     session_start();
     // ตรวจสอบว่ามีชื่อใน session หรือไม่ หากไม่มีให้ไปหน้า login อัตโนมัติ
-    if (empty($_SESSION["username"]) ) { 
+    if (empty($_SESSION["username"]) || !$_SESSION["isAdmin"]) { 
         header("location: login-form.php");
     }
 ?>
@@ -17,6 +17,7 @@
    while ($row = $stmt->fetch()) {
        echo "ชื่อสินค้า: " . $row ["pname"] . "<br>";
        echo "ราคา: " . $row ["price"] . " บาท <br>";
+       echo "คงเหลือ: " . $row ["amount"] . " ชิ้น  <br>";
        echo "<hr>\n";
    }
 ?>

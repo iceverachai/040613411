@@ -1,20 +1,21 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.12
--- http://www.phpmyadmin.net
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 14, 2015 at 06:52 AM
--- Server version: 5.6.16
--- PHP Version: 5.5.11
+-- Generation Time: Oct 08, 2023 at 09:27 PM
+-- Server version: 11.3.0-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `blueshop`
@@ -26,14 +27,12 @@ SET time_zone = "+00:00";
 -- Table structure for table `item`
 --
 
-DROP TABLE IF EXISTS `item`;
-CREATE TABLE IF NOT EXISTS `item` (
-  `tid` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `item` (
+  `tid` int(11) NOT NULL,
   `ord_id` int(11) NOT NULL,
   `pid` int(11) NOT NULL,
-  `quantity` int(11) NOT NULL,
-  PRIMARY KEY (`tid`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=47 ;
+  `quantity` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 --
 -- Dumping data for table `item`
@@ -57,25 +56,25 @@ INSERT INTO `item` (`tid`, `ord_id`, `pid`, `quantity`) VALUES
 -- Table structure for table `member`
 --
 
-DROP TABLE IF EXISTS `member`;
-CREATE TABLE IF NOT EXISTS `member` (
+CREATE TABLE `member` (
   `username` varchar(15) NOT NULL,
   `password` varchar(15) NOT NULL,
   `name` varchar(100) NOT NULL,
   `address` varchar(255) NOT NULL,
   `mobile` varchar(30) NOT NULL,
   `email` varchar(30) DEFAULT NULL,
-  PRIMARY KEY (`username`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `isAdmin` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 --
 -- Dumping data for table `member`
 --
 
-INSERT INTO `member` (`username`, `password`, `name`, `address`, `mobile`, `email`) VALUES
-('somsak', '1899', 'สมศักดิ์ สุรเสถียร', '174 ถ.มิตรภาพ จ.ขอนแก่น', '', 'somsak@gmail.com'),
-('baramee', 'aafff1', 'บารมี บุญหลาย', '123 ถ.วิภาวดีรังสิต กรุงเทพฯ', '08-9446-9955', 'baramee@gmail.com'),
-('metasit', 'm345', 'เมธาสิทธิ์ สอนสั่ง', '98/9 ถ.ศรีจันทร์ จ.ขอนแก่น', '08-4456-9877', 'metasit@outlook.com');
+INSERT INTO `member` (`username`, `password`, `name`, `address`, `mobile`, `email`, `isAdmin`) VALUES
+('somsak', '1899', 'สมศักดิ์ สุรเสถียร', '174 ถ.มิตรภาพ จ.ขอนแก่น', '', 'somsak@gmail.com', 0),
+('baramee', 'aafff1', 'บารมี บุญหลาย', '123 ถ.วิภาวดีรังสิต กรุงเทพฯ', '08-9446-9955', 'baramee@gmail.com', 0),
+('metasit', 'm345', 'เมธาสิทธิ์ สอนสั่ง', '98/9 ถ.ศรีจันทร์ จ.ขอนแก่น', '08-4456-9877', 'metasit@outlook.com', 0),
+('abc', 'abc', 'ABC DEF', 'on the earth', '1150', 'abc@gmail.com', 1);
 
 -- --------------------------------------------------------
 
@@ -83,14 +82,12 @@ INSERT INTO `member` (`username`, `password`, `name`, `address`, `mobile`, `emai
 -- Table structure for table `orders`
 --
 
-DROP TABLE IF EXISTS `orders`;
-CREATE TABLE IF NOT EXISTS `orders` (
-  `ord_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `orders` (
+  `ord_id` int(11) NOT NULL,
   `username` varchar(15) NOT NULL,
   `ord_date` datetime NOT NULL,
-  `status` enum('wait','pay','send','cancel') NOT NULL,
-  PRIMARY KEY (`ord_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+  `status` enum('wait','pay','send','cancel') NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 --
 -- Dumping data for table `orders`
@@ -108,24 +105,74 @@ INSERT INTO `orders` (`ord_id`, `username`, `ord_date`, `status`) VALUES
 -- Table structure for table `product`
 --
 
-DROP TABLE IF EXISTS `product`;
-CREATE TABLE IF NOT EXISTS `product` (
-  `pid` int(13) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `product` (
+  `pid` int(13) NOT NULL,
   `pname` varchar(255) NOT NULL,
   `pdetail` text NOT NULL,
   `price` int(4) NOT NULL,
-  PRIMARY KEY (`pid`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
+  `amount` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 --
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`pid`, `pname`, `pdetail`, `price`) VALUES
-(1, 'Centrum', 'วิตามินรวมจาก A ถึง Zinc', 350),
-(2, 'Caltrate', 'บำรุงกระดูก เสริมวิตามินดี', 760),
-(3, 'Ester-C', 'วิตามินซี 500 mg ไม่กัดกระเพาะ', 500),
-(4, 'Glucosamine', 'บำรุงข้อต่อ ป้องกันข้อเสื่อม', 1200);
+INSERT INTO `product` (`pid`, `pname`, `pdetail`, `price`, `amount`) VALUES
+(1, 'Centrum', 'วิตามินรวมจาก A ถึง Zinc', 350, 5),
+(2, 'Caltrate', 'บำรุงกระดูก เสริมวิตามินดี', 760, 10),
+(3, 'Ester-C', 'วิตามินซี 500 mg ไม่กัดกระเพาะ', 500, 15),
+(4, 'Glucosamine', 'บำรุงข้อต่อ ป้องกันข้อเสื่อม', 1200, 20);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `item`
+--
+ALTER TABLE `item`
+  ADD PRIMARY KEY (`tid`);
+
+--
+-- Indexes for table `member`
+--
+ALTER TABLE `member`
+  ADD PRIMARY KEY (`username`);
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`ord_id`);
+
+--
+-- Indexes for table `product`
+--
+ALTER TABLE `product`
+  ADD PRIMARY KEY (`pid`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `item`
+--
+ALTER TABLE `item`
+  MODIFY `tid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `ord_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `product`
+--
+ALTER TABLE `product`
+  MODIFY `pid` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

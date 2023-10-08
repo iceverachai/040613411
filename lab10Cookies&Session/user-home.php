@@ -6,19 +6,27 @@
 <h1>สวัสดี <?=$_SESSION["fullname"]?></h1>
 หากต้องการออกจากระบบโปรดคลิก <a href='logout.php'>ออกจากระบบ</a>
 <?php
+    if (empty($_SESSION["username"]) ) { 
+        header("location: login-form.php");
+    }
+
     if($_SESSION["isAdmin"]){
+        echo "<div style='margin-top:30px;'><a href='product-list.php'>ดูหน้าสินค้าคงเหลือ</a></div>";
         $stmt = $pdo->prepare(
             "SELECT member.username , count(orders.ord_id) total_order from member 
             LEFT JOIN orders on member.username = orders.username 
             GROUP BY member.username;"
         );
         $stmt->execute(); 
-        echo "<div style='margin-top:30px;'></div>";
+        // echo "<div style='margin-top:30px;'></div>";
         while ($row = $stmt->fetch()) {
         echo "
-            <div>
+            <div style='margin-top:20px;'>
                 <div>username : {$row["username"]} </div>
-                <div>จำนวนออเดอร์ : {$row["total_order"]} </div>
+                <div style='display:flex;'>
+                    <div>จำนวนออเดอร์ : {$row["total_order"]} </div>
+                    <a style='margin-left:20px;' href='order-detail.php?username={$row['username']}'>ดูรายละเอียดออเดอร์</a>
+                </div>
             </div>
         ";
         }
@@ -29,10 +37,10 @@
 <?php
        $stmt = $pdo->prepare(
         "SELECT orders.ord_id,ord_date,pname,pdetail,quantity,price from member 
-       INNER JOIN orders ON member.username = orders.username 
-       INNER JOIN item ON orders.ord_id = item.ord_id 
-       INNER JOIN product ON item.pid = product.pid 
-       WHERE member.username = ?"
+        INNER JOIN orders ON member.username = orders.username 
+        INNER JOIN item ON orders.ord_id = item.ord_id 
+        INNER JOIN product ON item.pid = product.pid
+        WHERE member.username = ? ORDER BY orders.ord_id ASC;"
        );
 
        $stmt->bindParam(1, $_SESSION["username"]);        
