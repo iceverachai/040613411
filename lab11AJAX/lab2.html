@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        async function ajaxza(){
+            const keyword = document.getElementById("keyword");
+            const result = document.getElementById("result");
+            if(keyword.value.length == 0){
+                result.innerHTML = ''; 
+                return;
+            }
+            const respond  = await fetch(`lab2.php?keyword=${keyword.value}`);
+            const array = JSON.parse(await respond.text());
+            result.innerHTML = ''; 
+            for(const arr of array){
+                result.innerHTML +=`
+                <div>
+                    <div><img src="./member_photo/${arr.img}.jpg"></div>
+                    รายชื่อสมาชิก : ${arr.name}
+                    <hr>
+                </div>
+            `;
+            }
+       
+        }
+    </script>
+</head>
+<body>
+    Member name : <input type="text" id="keyword" onkeyup="ajaxza()">
+    <div id="result" style="margin-top:20px;">
+
+    </div>
+</body>
+</html>

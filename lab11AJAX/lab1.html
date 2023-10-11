@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        async function ajaxza(){
+            const a = document.getElementById("a");
+            const b = document.getElementById("b");
+            const c = document.getElementById("c");
+            const d = document.getElementById("d");
+            const respond = await fetch(`lab1.php?a=${a.value}&b=${b.value}&c=${c.value}`);
+            d.innerHTML = await respond.text();
+        }
+
+    </script>
+</head>
+<body>
+    <h1>บันทึกการขาย</h1>
+    <div>
+        มะม่วง กก. ละ 30 บาท ขายได้ 
+        <input type="number" id="a"> กก.
+    </div>
+    <div>
+        ส้ม กก. ละ 70 บาท ขายได้ 
+        <input type="number" id="b"> กก.
+    </div>
+    <div>
+        กล้วย หวีละ 30 บาท ขายได้ 
+        <input type="number" id="c" onkeyup="ajaxza()"> กก.
+    </div>
+    <h2 id="d"></h2>
+</body>
+</html>
